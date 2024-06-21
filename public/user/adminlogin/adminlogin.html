@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adminstration login</title>
+    <link rel="stylesheet" href="adminlogin.css" />
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container1">
+        <div class="logo">
+          <img src="iitgn.webp" class="Logo1" />
+        </div>
+        <div class="IIT">
+          <h3>IIT Gandhinagar</h3>
+        </div>
+      </div>
+    </nav>
+
+    <div id="particles-js"></div>
+    <form id="loginForm" autocomplete="off" class="form">
+      <div class="control">
+        <h1>ADMIN LOGIN</h1>
+      </div>
+      <div class="control block-cube block-input">
+        <input
+          id="username"
+          name="username"
+          placeholder="Username"
+          type="text"
+        />
+        <div class="bg-top">
+          <div class="bg-inner"></div>
+        </div>
+        <div class="bg-right">
+          <div class="bg-inner"></div>
+        </div>
+        <div class="bg">
+          <div class="bg-inner"></div>
+        </div>
+      </div>
+      <div class="control block-cube block-input">
+        <input
+          id="password"
+          name="password"
+          placeholder="Password"
+          type="password"
+        />
+        <div class="bg-top">
+          <div class="bg-inner"></div>
+        </div>
+        <div class="bg-right">
+          <div class="bg-inner"></div>
+        </div>
+        <div class="bg">
+          <div class="bg-inner"></div>
+        </div>
+      </div>
+      <button
+        class="btn block-cube block-cube-hover"
+        type="button"
+        onclick="login()"
+      >
+        <div class="bg-top">
+          <div class="bg-inner"></div>
+        </div>
+        <div class="bg-right">
+          <div class="bg-inner"></div>
+        </div>
+        <div class="bg">
+          <div class="bg-inner"></div>
+        </div>
+        <div class="text">Log In</div>
+      </button>
+    </form>
+
+    
+    <script>
+      particlesJS.load("particles-js", "particles.json", function () {
+        console.log("callback - particles.js config loaded");
+      });
+
+
+
+
+      const validCredentials = [
+        { username: "admin", password: "admin" },
+      ];
+
+      function login() {
+        // Get user input
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        // Validate credentials
+        const user = validCredentials.find(
+          (user) => user.username === username && user.password === password
+        );
+
+        if (user) {
+          // Redirect to admin page or show a message
+          window.location.href = "../../admin/admin.html"; // Replace with the URL of your admin page
+        } else {
+          // Show error message
+          alert("Invalid username or password");
+        }
+      }
+    </script>
+  </body>
+</html>

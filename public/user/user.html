@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maintenance Form</title>
+    <link rel="stylesheet" href="user/user.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container1">
+        <div class="logo">
+          <img src="user/iitgn.webp" class="Logo1" />
+        </div>
+        <div class="IIT">
+          <h3>IIT Gandhinagar</h3>
+        </div>
+      </div>
+    </nav>
+    <div class="containerx">
+      <div class="adminpanel">
+        <button id="adminButton" onclick="redirectToAdminLogin()">ADMIN</button>
+      </div>
+    </div>
+
+    <div id="particles-js"></div>
+    <section class="formclass">
+      <div class="container2">
+        <header>MAINTENANCE FORM</header>
+        <form id="maintenanceForm">
+          <section class="firstrow">
+            <div class="fields">
+              <div class="input-field">
+                <label>Name</label>
+                <input type="text" name="name" placeholder="Name" required />
+              </div>
+              <div class="input-field">
+                <label>E-mail</label>
+                <input type="email" name="email" placeholder="E-mail" />
+              </div>
+              <div class="input-field">
+                <label>Contact</label>
+                <input
+                  type="number"
+                  name="contact"
+                  placeholder="Phone no."
+                  required
+                />
+              </div>
+            </div>
+          </section>
+          <section class="secondrow">
+            <div class="fields">
+              <div class="input-field want">
+                <label>Type of query</label>
+                <select
+                  id="typeofquerry"
+                  name="queryType"
+                  class="select1"
+                  required
+                  onchange="getSubDomains(this.value)"
+                >
+                  <option disabled selected>Type of Query</option>
+                  <option value="Electrical">Electrical</option>
+                  <option value="Furniture">Furniture</option>
+                  <option value="Civil">Civil</option>
+                  <option value="Sanitary">Sanitary</option>
+                </select>
+              </div>
+              <div class="input-field want">
+                <label>Sub domain</label>
+                <select
+                  id="subDomain"
+                  name="subDomain"
+                  class="select2"
+                  required
+                >
+                  <option value="" disabled selected>
+                    Select a sub domain
+                  </option>
+                </select>
+              </div>
+            </div>
+          </section>
+          <section class="thirdrow">
+            <div class="fields">
+              <div class="input-field">
+                <label>AREA</label>
+                <select name="area" required>
+                  <option disabled selected>Area</option>
+                  <option>Hostel Area</option>
+                  <option>Academic Block</option>
+                  <option>Housing Block</option>
+                  <option>Sports Complex</option>
+                  <option>Research Park</option>
+                  <option>Infrastructure</option>
+                  <option>Guest house</option>
+                  <option>Central Arcade</option>
+                </select>
+              </div>
+              <div class="input-field">
+                <label>Address</label>
+                <input
+                  type="text"
+                  name="address"
+                  placeholder="Ex. C-203, 10/103"
+                  required
+                />
+              </div>
+              <div class="input-field">
+                <label>Availability</label>
+                <input
+                  type="text"
+                  name="availability"
+                  placeholder="Ex. 8:00 AM - 5:00 PM"
+                  required
+                />
+              </div>
+            </div>
+          </section>
+          <section class="fourthrow">
+            <div class="fields">
+              <div class="input-field">
+                <label>Description</label>
+                <textarea
+                  id="Description"
+                  name="description"
+                  cols="10"
+                  rows="4"
+                  maxlength="150"
+                  placeholder="Description of Issue"
+                ></textarea>
+              </div>
+              <div class="input-field">
+                <label>Multiple files</label>
+                <input type="file" name="files" multiple />
+              </div>
+            </div>
+          </section>
+          <section class="fifthrow">
+            <div class="fields">
+              <button type="submit" class="nextBtn">
+                <span class="btnText">SUBMIT</span>
+                <i class="uil uil-navigator"></i>
+              </button>
+            </div>
+          </section>
+        </form>
+      </div>
+    </section>
+
+    
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="user/user.js"></script>
+  </body>
+</html>
