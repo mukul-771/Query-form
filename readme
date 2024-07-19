@@ -1,0 +1,12 @@
+how to start
+
+step 1.  connect mongodb "npm install mongodb"
+
+step 2. run server "node server.js"
+
+
+and 
+
+Baaaam!!!!
+
+for default admin user/pass are admin
